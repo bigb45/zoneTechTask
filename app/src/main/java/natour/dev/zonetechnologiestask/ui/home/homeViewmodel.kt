@@ -1,4 +1,4 @@
-package natour.dev.zonetechnologiestask.ui.firstFragment
+package natour.dev.zonetechnologiestask.ui.home
 
 import android.util.Log
 import androidx.lifecycle.LiveData
@@ -8,12 +8,11 @@ import kotlinx.coroutines.launch
 import natour.dev.zonetechnologiestask.data.LocationRepository
 import natour.dev.zonetechnologiestask.domain.model.Device
 import natour.dev.zonetechnologiestask.domain.model.LocationModel
-import natour.dev.zonetechnologiestask.domain.usecase.CheckDeviceRegisteredUseCase
 import natour.dev.zonetechnologiestask.network.TraccarApi
 import natour.dev.zonetechnologiestask.network.TraccarApiClient
 import natour.dev.zonetechnologiestask.ui.services.TAG
 
-class FirstFragmentViewmodel : ViewModel() {
+class homeViewmodel : ViewModel() {
 
     private val apiService: TraccarApi = TraccarApiClient.api
 

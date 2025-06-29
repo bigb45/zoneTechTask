@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/FirstFragment"
-        android:name="natour.dev.zonetechnologiestask.ui.firstFragment.FirstFragment"
+        android:name="natour.dev.zonetechnologiestask.ui.home.homeFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_first">
 

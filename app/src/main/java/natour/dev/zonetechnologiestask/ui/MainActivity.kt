@@ -7,19 +7,18 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
-import com.google.android.material.snackbar.Snackbar
 import natour.dev.zonetechnologiestask.R
 import natour.dev.zonetechnologiestask.core.util.SharedPreferencesUtil
 import natour.dev.zonetechnologiestask.core.util.UniqueIdUtil.generateRandomId
 import natour.dev.zonetechnologiestask.databinding.ActivityMainBinding
-import natour.dev.zonetechnologiestask.ui.firstFragment.FirstFragmentViewmodel
+import natour.dev.zonetechnologiestask.ui.home.homeViewmodel
 import natour.dev.zonetechnologiestask.ui.services.LocationTrackingService
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
-    private val viewmodel = FirstFragmentViewmodel()
+    private val viewmodel = homeViewmodel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         SharedPreferencesUtil.init(this)

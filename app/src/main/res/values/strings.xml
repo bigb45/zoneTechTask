@@ -9,4 +9,12 @@
     <string name="sharedPreferencesFileKey">zoneSharedPreferences</string>
     <string name="sharedPreferencesIsTrackingKey">isTracking</string>
     <string name="deviceId">deviceId</string>
+    <string name="please_enable_location_services">Please enable location services!</string>
+    <string name="ok">Ok</string>
+    <string name="tracking_stopped">Tracking stopped</string>
+    <string name="your_location_is_not_being_shared">Your location is not being shared.</string>
+    <string name="stop_tracking">stop tracking</string>
+    <string name="start_tracking">start tracking</string>
+    <string name="please_allow_location_access_from_the_settings">Please allow location access from the settings!</string>
+    <string name="open_settings">Open settings</string>
 </resources>

@@ -1,4 +1,4 @@
-package natour.dev.zonetechnologiestask.locationListAdapter
+package natour.dev.zonetechnologiestask.ui.locationListAdapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

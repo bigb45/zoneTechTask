@@ -10,6 +10,7 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import natour.dev.zonetechnologiestask.core.util.Constants.DEVICE_ID_KEY
+import natour.dev.zonetechnologiestask.core.util.Constants.HOST_MACHINE_IP
 import natour.dev.zonetechnologiestask.core.util.Constants.PUSH_LOCATION_PORT
 import natour.dev.zonetechnologiestask.core.util.SharedPreferencesUtil
 import natour.dev.zonetechnologiestask.core.util.UniqueIdUtil
@@ -70,7 +71,7 @@ object LocationRepository {
     private fun sendLocationToTraccar(deviceId: String, lat: Double, lon: Double) {
         val url = HttpUrl.Builder()
             .scheme("http")
-            .host("192.168.1.9") // replace with your server IP or domain
+            .host(HOST_MACHINE_IP) // replace with your server IP or domain
             .port(PUSH_LOCATION_PORT)
             .addQueryParameter("id", deviceId)
             .addQueryParameter("lat", lat.toString())

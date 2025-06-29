@@ -6,17 +6,17 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import natour.dev.zonetechnologiestask.databinding.LocationUpdateTileBinding
-import natour.dev.zonetechnologiestask.model.LocationUpdateTileData
+import natour.dev.zonetechnologiestask.domain.model.LocationModel
 
-class LocationTileDiffUtil : DiffUtil.ItemCallback<LocationUpdateTileData>() {
+class LocationModelDiffUtil : DiffUtil.ItemCallback<LocationModel>() {
     override fun areItemsTheSame(
-        oldItem: LocationUpdateTileData, newItem: LocationUpdateTileData
+        oldItem: LocationModel, newItem: LocationModel
     ): Boolean {
         return oldItem.id == newItem.id
     }
 
     override fun areContentsTheSame(
-        oldItem: LocationUpdateTileData, newItem: LocationUpdateTileData
+        oldItem: LocationModel, newItem: LocationModel
     ): Boolean {
         return oldItem.lat == newItem.lat && oldItem.lon == newItem.lon
     }
@@ -25,11 +25,11 @@ class LocationTileDiffUtil : DiffUtil.ItemCallback<LocationUpdateTileData>() {
 
 class LocationUpdateTileViewHolder(private val binding: LocationUpdateTileBinding) :
     RecyclerView.ViewHolder(binding.root) {
-    fun bind(item: LocationUpdateTileData) {
+    fun bind(item: LocationModel) {
         with(binding) {
             lon.text = item.lon
             lat.text = item.lat
-            updateTime.text = item.pushDate
+            updateTime.text = item.timestamp
 
         }
     }
@@ -37,7 +37,9 @@ class LocationUpdateTileViewHolder(private val binding: LocationUpdateTileBindin
 }
 
 class LocationListAdapter :
-    ListAdapter<LocationUpdateTileData, LocationUpdateTileViewHolder>(LocationTileDiffUtil()) {
+    ListAdapter<LocationModel, LocationUpdateTileViewHolder>(
+        LocationModelDiffUtil()
+    ) {
     override fun onCreateViewHolder(
         parent: ViewGroup, viewType: Int
     ): LocationUpdateTileViewHolder {
@@ -49,8 +51,6 @@ class LocationListAdapter :
     override fun onBindViewHolder(holder: LocationUpdateTileViewHolder, position: Int) {
         val item = getItem(position)
         holder.bind(item)
-
-
     }
 
 }
